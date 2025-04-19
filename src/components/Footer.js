@@ -1,11 +1,10 @@
 import React from 'react';
-import './Footer.css';
 
 function Footer(){
     return(
-        <Footer className="footer">
+        <footer className="footer">
             <div className="footer-logo">
-                <img src="/images/logo.png" alt="Little Lemon Logo" />
+                <img src="/images/logo.svg" alt="Little Lemon Logo" />
             </div>
 
             <div className="footer-nav">
@@ -38,7 +37,7 @@ function Footer(){
                         </ul>
                 </div>
             </div>
-        </Footer>
+        </footer>
     );
 }
 
