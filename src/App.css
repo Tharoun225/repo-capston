@@ -68,12 +68,27 @@
 
 .hero-image {
   flex: 1;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .hero-image img {
   width: 100%;
   border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
 }
 
 /*2. CSS – Highlights Section*/
@@ -137,6 +152,11 @@
 .highlight-card p {
   color: #333;
 }
+@media (max-width: 768px) {
+  .highlight-card {
+    width: 100%;
+  }
+}
 
 /*3. CSS – Testimonials Section*/
 .testimonials-section {
@@ -189,6 +209,18 @@
 .testimonial-card p {
   font-size: 0.95rem;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+  }
+}
+
+/*Autres*/
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*4. CSS – About Section*/
