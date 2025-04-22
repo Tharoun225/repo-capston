@@ -5,10 +5,11 @@ import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import { Helmet } from "react-helmet";
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Nav />
       <Main />
@@ -44,7 +45,7 @@ function App() {
         <h1>Bienvenue chez Little Lemon 🍋</h1>
         {/* ...reste de ton interface */}
       </div>
-    </>
+    </BrowserRouter>
   );
 }
 

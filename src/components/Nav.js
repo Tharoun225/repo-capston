@@ -1,4 +1,5 @@
 import react from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav(){
     return(
@@ -7,12 +8,12 @@ function Nav(){
                 <img src="/images/Logo.svg" alt="Logo"/>
             </div>
             <ul className='nav-links'>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>About</a></li>
-                <li><a href='#'>Menu</a></li>
-                <li><a href='#'>Reservation</a></li>
-                <li><a href='#'>Order Online</a></li>
-                <li><a href='#'>Login</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/menu">Menu</Link></li>
+                <li><Link to="/booking">Reservation</Link></li>
+                <li><Link to="/order">Order Online</Link></li>
+                <li><Link to="/login">Login</Link></li>
             </ul>
         </nav>
     );
