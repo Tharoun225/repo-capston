@@ -40,12 +40,6 @@ function App() {
         <meta name="twitter:image" content="https://example.com/images/preview.jpg" />
       </Helmet>
 
-      {/* Ton contenu principal ici */}
-      <div>
-        <h1>Bienvenue chez Little Lemon 🍋</h1>
-        {/* ...reste de ton interface */}
-      </div>
-
     </BrowserRouter>
   );
 }

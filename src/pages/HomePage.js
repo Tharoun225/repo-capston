@@ -8,6 +8,7 @@ const HomePage = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1>Little Lemon</h1>
+            <p>Chicago</p>
             <p>
               Authentic Mediterranean flavors in the heart of Chicago.
               Experience delicious meals made with love and tradition.
@@ -84,6 +85,7 @@ const HomePage = () => {
         <div className="about-content">
           <div className="about-text">
             <h2>About Little Lemon</h2>
+            <p>Welcome to Little Lemon 🍋</p>
             <p>
               Little Lemon is a family-owned Mediterranean restaurant founded by Adrian and Mario.
               We are passionate about delivering delicious, healthy food with a warm and welcoming experience.
@@ -100,7 +102,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
-/*<span>Online Menu</span>
-            <button>View Full Menu</button>*/

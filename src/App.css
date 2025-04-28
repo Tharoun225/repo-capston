@@ -27,8 +27,8 @@
 
 /*Footer-CSS*/
 .footer {
-  background-color: #333; /* fond sombre */
-  color: #fff;            /* texte clair */
+  background-color: #333; 
+  color: #fff;           
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -226,11 +226,6 @@ main {
   border-radius: 8px;
 }
 
-/*.hero-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
-}*/
 .hero-image img {
   width: 100%;
   max-width: 350px; /* Réduit de 500px à 350px */
@@ -239,46 +234,6 @@ main {
   object-fit: cover; /* Optionnel : pour recadrer joliment si besoin */
 }
 
-
-/* Highlights Section 
-.highlights-section {
-  padding: 4rem 2rem;
-  background-color: #fff;
-}
-
-.highlights-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.menu-link {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.highlight-cards {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.highlight-card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1rem;
-  flex: 1 1 30%;
-  text-align: center;
-}
-
-.highlight-card img {
-  width: 100%;
-  max-width: 200px;
-  border-radius: 8px;
-}*/
 .highlights-section {
   padding: 4rem 2rem;
   background-color: #fdfcf8; /* Fond doux pour mettre en valeur */
