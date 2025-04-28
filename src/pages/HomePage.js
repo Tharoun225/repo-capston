@@ -25,8 +25,7 @@ const HomePage = () => {
         <div className="highlights-header">
           <h2>This Week's Specials</h2>
           <div className="menu-link">
-            <span>Online Menu</span>
-            <button>View Full Menu</button>
+            <button>Online Menu</button>
           </div>
         </div>
 
@@ -101,3 +100,7 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+/*<span>Online Menu</span>
+            <button>View Full Menu</button>*/

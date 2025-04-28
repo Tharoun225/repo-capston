@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAPI, submitAPI } from '../services/api'; // Importation du fichier local
+import { fetchAPI, submitAPI } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
-// Fonction de génération d'heures
 const generateTimeSlots = (start = 17, end = 22, step = 30) => {
   const slots = [];
   for (let hour = start; hour < end; hour++) {
@@ -23,12 +22,12 @@ const BookingPage = () => {
     guests: 1,
   });
 
-  const [availableTimes, setAvailableTimes] = useState([]);  // Pour stocker les heures disponibles
+  const [errors, setErrors] = useState({});
+  const [availableTimes, setAvailableTimes] = useState([]);
 
   useEffect(() => {
-    // Lorsque la date change, récupérer les heures disponibles pour cette date
     if (formData.date) {
-      const selectedDate = new Date(formData.date); // ✅ Conversion string → Date
+      const selectedDate = new Date(formData.date);
       fetchAPI(selectedDate)
         .then((times) => setAvailableTimes(times))
         .catch((error) => console.error('Erreur de récupération des heures :', error));
@@ -37,29 +36,36 @@ const BookingPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: '',
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Le nom est requis.';
+    if (!formData.email.trim()) newErrors.email = 'L\'email est requis.';
+    if (!formData.date) newErrors.date = 'La date est requise.';
+    if (!formData.time) newErrors.time = 'L\'heure est requise.';
+    if (formData.guests < 1 || formData.guests > 20) newErrors.guests = 'Le nombre de personnes doit être entre 1 et 20.';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Soumettre les données via submitAPI
+    if (!validateForm()) return;
+
     submitAPI(formData)
       .then((response) => {
         if (response) {
-          console.log('Réservation envoyée:', formData);
           navigate('/booking-confirmation', { state: formData });
-          // Réinitialiser le formulaire
-          setFormData({
-            name: '',
-            email: '',
-            date: '',
-            time: '',
-            guests: 1,
-          });
+          setFormData({ name: '', email: '', date: '', time: '', guests: 1 });
         } else {
           alert('Désolé, il y a eu une erreur lors de la soumission.');
         }
@@ -74,25 +80,55 @@ const BookingPage = () => {
     <section className="booking-page">
       <h2>Réserver une Table</h2>
 
-      <form className="booking-form" onSubmit={handleSubmit}>
+      <form className="booking-form" onSubmit={handleSubmit} noValidate>
         <label>
           Nom :
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          <input 
+            type="text" 
+            name="name" 
+            value={formData.name} 
+            onChange={handleChange} 
+            required 
+            aria-invalid={errors.name ? "true" : "false"}
+          />
+          {errors.name && <span role="alert">{errors.name}</span>}
         </label>
 
         <label>
           Email :
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <input 
+            type="email" 
+            name="email" 
+            value={formData.email} 
+            onChange={handleChange} 
+            required 
+            aria-invalid={errors.email ? "true" : "false"}
+          />
+          {errors.email && <span role="alert">{errors.email}</span>}
         </label>
 
         <label>
           Date :
-          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+          <input 
+            type="date" 
+            name="date" 
+            value={formData.date} 
+            onChange={handleChange} 
+            required 
+            aria-invalid={errors.date ? "true" : "false"}
+          />
+          {errors.date && <span role="alert">{errors.date}</span>}
         </label>
 
         <label>
           Heure :
-          <select name="time" value={formData.time} onChange={handleChange} required>
+          <select 
+            name="time" 
+            value={formData.time} 
+            onChange={handleChange} 
+            required
+            aria-invalid={errors.time ? "true" : "false"}
+          >
             <option value="">-- Sélectionner une heure --</option>
             {availableTimes.length > 0
               ? availableTimes.map((slot) => (
@@ -106,11 +142,22 @@ const BookingPage = () => {
                   </option>
                 ))}
           </select>
+          {errors.time && <span role="alert">{errors.time}</span>}
         </label>
 
         <label>
           Nombre de personnes :
-          <input type="number" name="guests" min="1" max="20" value={formData.guests} onChange={handleChange} required />
+          <input 
+            type="number" 
+            name="guests" 
+            min="1" 
+            max="20" 
+            value={formData.guests} 
+            onChange={handleChange} 
+            required 
+            aria-invalid={errors.guests ? "true" : "false"}
+          />
+          {errors.guests && <span role="alert">{errors.guests}</span>}
         </label>
 
         <button type="submit">Réserver</button>
