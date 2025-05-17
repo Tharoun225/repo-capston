@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/repo-capston/static/css/main.7862c417.css",
+    "main.js": "/repo-capston/static/js/main.757cb71a.js",
+    "static/js/453.c525d7c0.chunk.js": "/repo-capston/static/js/453.c525d7c0.chunk.js",
+    "index.html": "/repo-capston/index.html",
+    "main.7862c417.css.map": "/repo-capston/static/css/main.7862c417.css.map",
+    "main.757cb71a.js.map": "/repo-capston/static/js/main.757cb71a.js.map",
+    "453.c525d7c0.chunk.js.map": "/repo-capston/static/js/453.c525d7c0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7862c417.css",
+    "static/js/main.757cb71a.js"
+  ]
+}
