@@ -1,11 +1,10 @@
-import react from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav(){
     return(
         <nav className="navbar">
             <div className='logo'>
-                <img src="/images/Logo.svg" alt="Logo"/>
+                <img src="https://www.figma.com/community/resource/2666faf0-5570-454a-a5bf-82187247c74e/thumbnail" alt="Logo"/>
             </div>
             <ul className='nav-links'>
                 <li><Link to="/">Home</Link></li>

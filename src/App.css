@@ -298,7 +298,7 @@ main {
 
 .hero-image img {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   height: auto;
   border-radius: 20px;
   transform: rotate(2deg);
@@ -617,4 +617,11 @@ main {
   .testimonial-card p {
     font-size: 0.9rem;
   }
+}
+
+:root {
+  --primary-color: #f4ce14;
+  --secondary-color: #495e57;
+  --accent-color: #ee9972;
+  --font-main: 'Karla', sans-serif;
 }

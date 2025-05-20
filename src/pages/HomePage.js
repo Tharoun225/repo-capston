@@ -19,7 +19,7 @@ const HomePage = () => {
             </Link>
           </div>
           <div className="hero-image">
-            <img src="/images/restauranfood.jpg" alt="Delicious Mediterranean Dish" />
+            <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/2a/33/db/6b/food-at-little-lemon.jpg" alt="Delicious Mediterranean Dish" />
           </div>
         </div>
       </section>
@@ -37,7 +37,7 @@ const HomePage = () => {
       {/* Cartes des plats en promotion */}
       <div className="highlight-cards">
         <div className="highlight-card">
-          <img src="/images/greek salad.jpg" alt="Greek Salad" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXYjkaG_bqoHCD2pSKT-H4uTE9NID6zml4QA&s" alt="Greek Salad" />
           <div className="card-content">
             <div className="card-header">
               <h3>Greek Salad</h3>
@@ -49,7 +49,7 @@ const HomePage = () => {
         </div>
 
         <div className="highlight-card">
-          <img src="/images/bruchetta.svg" alt="Bruschetta" />
+          <img src="https://cdn.loveandlemons.com/wp-content/uploads/2025/05/bruschetta-480x270.jpg" alt="Bruschetta" />
           <div className="card-content">
             <div className="card-header">
               <h3>Bruschetta</h3>
@@ -61,7 +61,7 @@ const HomePage = () => {
         </div>
 
         <div className="highlight-card">
-          <img src="/images/lemon dessert.jpg" alt="Lemon Dessert" />
+          <img src="https://bakingamoment.com/wp-content/uploads/2017/05/IMG_3119-square.jpg" alt="Lemon Dessert" />
           <div className="card-content">
             <div className="card-header">
               <h3>Lemon Dessert</h3>
@@ -126,8 +126,8 @@ const HomePage = () => {
       </p>
     </div>
     <div className="about-images">
-      <img src="/images/Mario and Adrian A.jpg" alt="Adrian - Co-founder"/>
-      <img src="/images/Mario and Adrian b.jpg" alt="Mario - Co-founder"/>
+      <img src="https://premierconstructionnews.com/wp-content/uploads/2024/01/lr-IMG_2635.jpg" alt="Adrian - Co-founder"/>
+      <img src="https://businessplus.ie/wp-content/uploads/2023/08/little-lemon-image.jpg" alt="Mario - Co-founder"/>
       </div>
     </div>
   </section>
