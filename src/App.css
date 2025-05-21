@@ -625,3 +625,171 @@ main {
   --accent-color: #ee9972;
   --font-main: 'Karla', sans-serif;
 }
+
+/*AboutPage CSS*/
+.about-page {
+  padding: 4rem 2rem;
+  background-color: #fffef6;
+  color: #333;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #495e57;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  flex: 1 1 400px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  height: 100%;
+  max-height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+}
+
+/*MenuPage CSS*/
+.menu-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.menu-page h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Style pour les boutons de filtre */
+.category-filter {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.category-filter button {
+  padding: 0.5rem 1rem;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-filter button.active,
+.category-filter button:hover {
+  background-color: #f4ce14;
+  color: #333;
+  border-color: #f4ce14;
+  font-weight: bold;
+}
+
+/* Mise en page des cartes de plats */
+.menu-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Style de la carte */
+.menu-card {
+  background-color: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Style de l’image */
+.menu-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+/* Titres et infos */
+.menu-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.menu-card .category {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.menu-card .price {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .menu-page {
+    padding: 1rem;
+  }
+
+  .menu-card {
+    padding: 1rem;
+  }
+
+  .category-filter {
+    gap: 0.5rem;
+  }
+
+  .category-filter button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .menu-image {
+    height: 140px;
+  }
+}
