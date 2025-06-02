@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext';
 
-// Liste des plats avec images, catégories, prix
+// Liste des plats
 const menuItems = [
   {
     id: 1,
     name: 'Bruschetta',
     category: 'Starter',
     price: '$6.00',
-    image: 'https://static01.nyt.com/images/2020/05/12/dining/as-tomato-bruschetta/as-tomato-bruschetta-googleFourByThree-v2.jpg', // ← Assure-toi que cette image existe dans le dossier public/images
+    image: 'https://static01.nyt.com/images/2020/05/12/dining/as-tomato-bruschetta/as-tomato-bruschetta-googleFourByThree-v2.jpg',
   },
   {
     id: 2,
@@ -60,25 +61,30 @@ const menuItems = [
   },
 ];
 
+// Catégories
 const categories = ['All', 'Starter', 'Main', 'Dessert', 'Drink'];
 
 const MenuPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const { cart, addToCart, removeFromCart, clearCart, getTotal } = useCart();
+  const [showModal, setShowModal] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
-  // Filtrage des plats selon la catégorie choisie
-  const filteredItems =
-    selectedCategory === 'All'
-      ? menuItems
-      : menuItems.filter(item => item.category === selectedCategory);
+  const filteredItems = selectedCategory === 'All'
+    ? menuItems
+    : menuItems.filter(item => item.category === selectedCategory);
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    setShowModal(true);
+    setTimeout(() => setShowModal(false), 1500);
+  };
 
   return (
     <section className="menu-page">
       <h2>Our Menu</h2>
-      <p className="description">
-        Explore our delicious Mediterranean dishes, made with love and fresh ingredients.
-      </p>
+      <p className="description">Explore our delicious Mediterranean dishes.</p>
 
-      {/* Boutons de filtre */}
       <div className="category-filter">
         {categories.map(cat => (
           <button
@@ -91,18 +97,49 @@ const MenuPage = () => {
         ))}
       </div>
 
-      {/* Affichage des plats filtrés */}
       <div className="menu-grid">
         {filteredItems.map(item => (
           <div key={item.id} className="menu-card">
-            {/* Affichage de l’image du plat */}
             <img src={item.image} alt={item.name} className="menu-image" />
             <h3>{item.name}</h3>
             <p className="category">{item.category}</p>
             <p className="price">{item.price}</p>
+            <button className="order-btn" onClick={() => handleAddToCart(item)}>
+              Commander
+            </button>
           </div>
         ))}
       </div>
+
+      <button className="cart-button" onClick={() => setShowCart(true)}>
+        Voir le panier ({Array.isArray(cart) ? cart.reduce((acc, item) => acc + item.quantity, 0) : 0})
+      </button>
+
+
+      {showModal && <div className="modal show">Ajouté au panier !</div>}
+
+      {showCart && (
+        <div className="cart-modal">
+          <div className="cart-content">
+            <h3>Votre panier</h3>
+            {cart.length === 0 ? (
+              <p>Le panier est vide.</p>
+            ) : (
+              <ul>
+                {cart.map(item => (
+                  <li key={item.id}>
+                    {item.name} x {item.quantity} - {item.price}
+                    <button onClick={() => removeFromCart(item.id)}>❌</button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p>Total: ${getTotal().toFixed(2)}</p>
+            <button onClick={clearCart} className="checkout-button">Passer commande</button>
+            <button onClick={() => setShowCart(false)}>Fermer</button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
