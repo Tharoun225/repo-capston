@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
-
+import React, { useState } from 'react';
 
 function Nav() {
+const [menuOpen, setMenuOpen] = useState(false);
+const handleToggleMenu = () => setMenuOpen(!menuOpen);
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${menuOpen ? "open" : ""}`}>
       {/* Logo du restaurant */}
       <div className="logo">
         <img
@@ -11,6 +13,10 @@ function Nav() {
           alt="Little Lemon Logo"
         />
       </div>
+      <button className="menu-toggle" onClick={handleToggleMenu}>
+        ☰
+      </button>
+
 
       {/* Liens de navigation */}
       <ul className="nav-links">

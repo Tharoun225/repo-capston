@@ -11,15 +11,17 @@ const HomePage = () => {
             <h1>Little Lemon</h1>
             <p className="location">Chicago</p>
             <p className="description">
-              Authentic Mediterranean flavors in the heart of Chicago.
-              Experience delicious meals made with love and tradition.
+              Savor the taste of authentic Mediterranean cuisine made with passion and fresh ingredients — all in the heart of Chicago.
             </p>
             <Link to="/booking" className="hero-button">
               Reserve a Table
             </Link>
           </div>
           <div className="hero-image">
-            <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/2a/33/db/6b/food-at-little-lemon.jpg" alt="Delicious Mediterranean Dish" />
+            <img
+              src="https://media-cdn.tripadvisor.com/media/photo-m/1280/2a/33/db/6b/food-at-little-lemon.jpg"
+              alt="Delicious Mediterranean Dish"
+            />
           </div>
         </div>
       </section>
