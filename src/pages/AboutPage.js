@@ -5,12 +5,12 @@ const AboutPage = () => {
     <section className="about-page">
       <div className="about-container">
         <div className="about-text">
-          <h2>About Little Lemon</h2>
+          <h2>À propos de Little Lemon</h2>
           <p>
-            Nestled in the heart of the city, Little Lemon is a family-owned Mediterranean restaurant that brings the rich flavors of the Mediterranean to your plate. Inspired by generations of traditional recipes, our dishes are crafted with love, authenticity, and the freshest ingredients.
+            Niché au cœur de la ville, Little Lemon est un restaurant méditerranéen familial qui vous offre les riches saveurs de la Méditerranée. Inspirés par des générations de recettes traditionnelles, nos plats sont élaborés avec amour, authenticité et à partir d'ingrédients frais.
           </p>
           <p>
-            From our signature lemon-infused dishes to our warm, inviting atmosphere, every detail is thoughtfully designed to offer a unique dining experience. Whether you're here for a casual lunch, a romantic dinner, or a family gathering, we strive to make every visit memorable.
+            De nos plats signatures infusés au citron à notre atmosphère chaleureuse et accueillante, chaque détail est soigneusement pensé pour vous offrir une expérience culinaire unique. Que vous soyez ici pour un déjeuner décontracté, un dîner romantique ou une réunion de famille, nous mettons tout en œuvre pour rendre chaque visite mémorable.
           </p>
         </div>
         <div className="about-image">

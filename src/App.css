@@ -99,9 +99,9 @@ img {
 
 /* HERO SECTION */
 .hero-section {
-  background-color: #495e57;
+  background-color: #033625;
   color: #fff;
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
 .hero-content {
@@ -128,7 +128,11 @@ img {
 .hero-text .location {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #e6e6e6;
+  color: hsl(30, 11%, 96%);
+}
+
+.hero-text .description{
+  color: white;
 }
 
 .hero-text .description {
@@ -208,8 +212,8 @@ img {
 }
 
 .menu-button {
-  background-color: #495e57;
-  color: white;
+  background-color: #eabf0a;
+  color: rgb(43, 42, 42);
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: bold;

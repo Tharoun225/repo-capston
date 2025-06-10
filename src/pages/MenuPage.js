@@ -43,7 +43,7 @@ const menuItems = [
     name: 'Baklava',
     category: 'Dessert',
     price: '$6.50',
-    image: 'https://www.tasteofbeirut.com/wp-content/uploads/2010/05/baklava-550x325.jpg',
+    image: 'https://images.unsplash.com/photo-1650802315766-f8a74cbde8fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJha2xhdmElMjBkZXNzZXJ0fGVufDB8fDB8fHww',
   },
   {
     id: 7,
